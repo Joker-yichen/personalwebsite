@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拾光集 | Gleaning Glow - 逸尘</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- 粒子动画背景 -->
+    <canvas id="particleCanvas"></canvas>
+    
+    <!-- 简单的星空背景 -->
+    <div class="stars-bg"></div>
+    <!-- 流星效果 -->
+    <div class="shooting-star"></div>
+    
+    <header>
+        <div class="logo">
+            <a href="index.html">逸尘 | Yichen</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">主页 | Home</a></li>
+                <li><a href="photos.html">拾光集 | Glow</a></li>
+                <li><a href="about.html">关于我 | About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="photos-page">
+            <div class="page-header">
+                <h1>拾光集 | Gleaning Glow</h1>
+                <p class="page-description">一梦知千秋&nbsp;&nbsp;&nbsp;半醒醉凡尘&nbsp;&nbsp;&nbsp;拾起时光碎片&nbsp;&nbsp;&nbsp;记录生活瞬间</p>
+            </div>
+
+            <div class="forest-section">
+                <div class="forest-image">
+                    <img src="image/拾光森林.png" alt="拾光森林">
+                    <a href="https://mp.weixin.qq.com/s/pqW-NB8w2Li5yEZFpH2kgQ" class="forest-link" target="_blank" rel="noopener noreferrer">
+                        进入拾光森林
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="photo-categories">
+                <button class="photo-category active" data-category="gleaning">拾光 | Gleaning</button>
+                <button class="photo-category" data-category="creation">造物 | Creation</button>
+                <button class="photo-category" data-category="journey">云游 | Journey</button>
+            </div>
+
+            <div class="photo-gallery">
+                <!-- 拾光 - 摄影作品 -->
+                <div class="photo-item" data-category="gleaning">
+                    <div class="photo-placeholder" data-img="image/gleaning/photo1.jpg"></div>
+                </div>
+                <div class="photo-item" data-category="gleaning">
+                    <div class="photo-placeholder" data-img="image/gleaning/photo2.jpg"></div>
+                </div>
+                <div class="photo-item" data-category="gleaning">
+                    <div class="photo-placeholder" data-img="image/gleaning/photo3.jpg"></div>
+                </div>
+                <div class="photo-item" data-category="gleaning">
+                    <div class="photo-placeholder" data-img="image/gleaning/photo4.jpg"></div>
+                </div>
+                <div class="photo-item" data-category="gleaning">
+                    <div class="photo-placeholder" data-img="image/gleaning/photo5.jpg"></div>
+                </div>
+                <div class="photo-item" data-category="gleaning">
+                    <div class="photo-placeholder" data-img="image/gleaning/photo6.jpg"></div>
+                </div>
+                <div class="photo-item" data-category="gleaning">
+                    <div class="photo-placeholder" data-img="image/gleaning/photo7.jpg"></div>
+                </div>
+                <div class="photo-item" data-category="gleaning">
+                    <div class="photo-placeholder" data-img="image/gleaning/photo8.jpg"></div>
+                </div>
+                <div class="photo-item" data-category="gleaning">
+                    <div class="photo-placeholder" data-img="image/gleaning/photo9.jpg"></div>
+                </div>
+
+                <!-- 造物 - 科技创作 -->
+                <div class="photo-item" data-category="creation">
+                    <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk4ODY2NTExNg==&action=getalbum&album_id=3999583967094571018" target="_blank" rel="noopener noreferrer">
+                        <div class="photo-placeholder" data-img="image/creation/photo1.jpg"></div>
+                    </a>
+                </div>
+                <div class="photo-item" data-category="creation">
+                    <div class="photo-placeholder" data-img="image/creation/photo2.jpg"></div>
+                </div>
+                <div class="photo-item" data-category="creation">
+                    <div class="photo-placeholder" data-img="image/creation/photo3.jpg"></div>
+                </div>
+                <div class="photo-item" data-category="creation">
+                    <div class="photo-placeholder" data-img="image/creation/photo4.jpg"></div>
+                </div>
+                <div class="photo-item" data-category="creation">
+                    <div class="photo-placeholder" data-img="image/creation/photo5.jpg"></div>
+                </div>
+                <div class="photo-item" data-category="creation">
+                    <div class="photo-placeholder" data-img="image/creation/photo6.jpg"></div>
+                </div>
+                <div class="photo-item" data-category="creation">
+                    <div class="photo-placeholder" data-img="image/creation/photo7.jpg"></div>
+                </div>
+                <div class="photo-item" data-category="creation">
+                    <div class="photo-placeholder" data-img="image/creation/photo8.jpg"></div>
+                </div>
+                <div class="photo-item" data-category="creation">
+                    <div class="photo-placeholder" data-img="image/creation/photo9.jpg"></div>
+                </div>
+
+                <!-- 云游 - 旅行记录 -->
+                <div class="photo-item" data-category="journey">
+                    <div class="photo-placeholder" data-img="image/journey/photo1.jpg"></div>
+                </div>
+                <div class="photo-item" data-category="journey">
+                    <div class="photo-placeholder" data-img="image/journey/photo2.jpg"></div>
+                </div>
+                <div class="photo-item" data-category="journey">
+                    <div class="photo-placeholder" data-img="image/journey/photo3.jpg"></div>
+                </div>
+                <div class="photo-item" data-category="journey">
+                    <div class="photo-placeholder" data-img="image/journey/photo4.jpg"></div>
+                </div>
+                <div class="photo-item" data-category="journey">
+                    <div class="photo-placeholder" data-img="image/journey/photo5.jpg"></div>
+                </div>
+                <div class="photo-item" data-category="journey">
+                    <div class="photo-placeholder" data-img="image/journey/photo6.jpg"></div>
+                </div>
+                <div class="photo-item" data-category="journey">
+                    <div class="photo-placeholder" data-img="image/journey/photo7.jpg"></div>
+                </div>
+                <div class="photo-item" data-category="journey">
+                    <div class="photo-placeholder" data-img="image/journey/photo8.jpg"></div>
+                </div>
+                <div class="photo-item" data-category="journey">
+                    <div class="photo-placeholder" data-img="image/journey/photo9.jpg"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 逸尘 | Yichen. 保留所有权利.</p>
+            <p>联系我 | Contact me: <a href="mailto:wky1969979046@163.com">wky1969979046@163.com</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="particles.js"></script>
+</body>
+</html> 
