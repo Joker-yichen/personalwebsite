@@ -259,7 +259,18 @@ a:hover {
 }
 
 /* 头部样式 */
-header {    display: flex;    justify-content: space-between;    align-items: center;    padding: 1.5rem 10%;    background-color: transparent;    backdrop-filter: none;    box-shadow: none;    position: relative;    width: 100%;    z-index: 100;}
+header {    
+    display: flex;    
+    justify-content: space-between;    
+    align-items: center;    
+    padding: 1.5rem 10%;    
+    background-color: transparent;    
+    backdrop-filter: none;    
+    box-shadow: none;    
+    position: relative;    
+    width: 100%;    
+    z-index: 100;
+}
 
 .logo a {
     font-size: 1.5rem;
@@ -852,7 +863,7 @@ footer p {
 
 @media screen and (max-width: 940px) {
     .hero {
-        flex-direction: column-reverse; /* 在移动端，图片先显示，内容后显示 */
+        flex-direction: column-reverse;
         text-align: center;
         gap: 2rem;
         padding: 1rem;
@@ -884,6 +895,7 @@ footer p {
         gap: 1rem;
     }
 
+    /* 移动端导航 */
     nav ul {
         display: none; /* 默认隐藏导航菜单 */
     }
@@ -899,7 +911,7 @@ footer p {
 
 @media screen and (max-width: 768px) {
     header {
-        flex-direction: row; /* 保持横向排列 */
+        flex-direction: row;
         padding: 1rem 5%;
         justify-content: space-between;
         align-items: center;
@@ -912,7 +924,7 @@ footer p {
     }
 
     nav ul {
-        display: none; /* 移动端隐藏默认导航 */
+        display: none;
     }
 
     nav ul li {
@@ -1596,18 +1608,16 @@ body:has(.hero) nav ul li a[href^="https://"] {
     }
 }
 
-/* 移动菜单按钮 - 默认隐藏 */
+/* 移动菜单按钮样式 */
 .mobile-menu-toggle {
-    display: none;
+    display: none; /* 默认隐藏 */
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
     height: 21px;
     cursor: pointer;
-    z-index: 1000;
-    position: absolute;
-    right: 10%;
-    top: 1.5rem;
+    z-index: 1001; /* 确保在最上层 */
+    margin-left: auto;
 }
 
 .mobile-menu-toggle span {
@@ -1634,7 +1644,7 @@ body:has(.hero) nav ul li a[href^="https://"] {
 
 /* 移动端菜单打开状态下的导航样式 */
 nav.mobile-open {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     align-items: center;
     position: fixed;
@@ -1649,9 +1659,11 @@ nav.mobile-open {
 }
 
 nav.mobile-open ul {
+    display: flex !important;
     flex-direction: column;
     width: 100%;
     text-align: center;
+    margin-top: 20px;
 }
 
 nav.mobile-open ul li {
@@ -1663,4 +1675,15 @@ nav.mobile-open ul li a {
     padding: 1rem;
     display: inline-block;
     width: 80%;
+}
+
+/* 强制在移动设备上显示菜单按钮 */
+@media screen and (max-width: 940px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    nav ul {
+        display: none;
+    }
 }

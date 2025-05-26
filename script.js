@@ -5,8 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const nav = document.querySelector('nav');
     
+    console.log('移动菜单按钮元素:', mobileMenuToggle); // 调试信息
+    
     if (mobileMenuToggle) {
+        console.log('屏幕宽度:', window.innerWidth); // 输出当前屏幕宽度
+        console.log('移动菜单按钮样式:', window.getComputedStyle(mobileMenuToggle).display); // 检查按钮是否显示
+        
         mobileMenuToggle.addEventListener('click', () => {
+            console.log('移动菜单按钮被点击');
             mobileMenuToggle.classList.toggle('active');
             nav.classList.toggle('mobile-open');
             // 禁止/允许背景滚动
