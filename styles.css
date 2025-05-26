@@ -1,14 +1,8 @@
 /* 全局样式 */:root {    /* 日间模式变量 */    --primary-color: #5b6b9a;    --secondary-color: #484e73;    --text-color: #333;    --background-color: #f0f2fc;    --accent-color: #e6e9f7;    --highlight-color: #9c9fd3;    --transition-speed: 0.3s;
-    /* 移动端菜单变量 */
-    --mobile-menu-bg: rgba(240, 242, 252, 0.95);
-    --mobile-menu-text: #333;
 }
 
 /* 夜间模式变量 */
 [data-theme="dark"] {    --primary-color: #a1b0dd;    --secondary-color: #8890b7;    --text-color: #ffffff;    --background-color: #030318;    --accent-color: #2a2b3d;    --highlight-color: #8c90c9;
-    /* 夜间模式移动端菜单变量 */
-    --mobile-menu-bg: rgba(3, 3, 24, 0.95);
-    --mobile-menu-text: #ffffff;
 }
 
 * {    margin: 0;    padding: 0;    box-sizing: border-box;}body {    font-family: 'Helvetica Neue', 'Arial', sans-serif;    line-height: 1.6;    color: var(--text-color);    background-color: var(--background-color);    position: relative;    overflow-x: hidden;    transition: background-color 0.5s ease;}/* 粒子背景画布 */#particleCanvas {    position: fixed;    top: 0;    left: 0;    width: 100%;    height: 100%;    z-index: -2;    pointer-events: none;}
@@ -895,17 +889,14 @@ footer p {
         gap: 1rem;
     }
 
-    /* 移动端导航 */
     nav ul {
-        display: none; /* 默认隐藏导航菜单 */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-
-    .mobile-menu-toggle {
-        display: flex; /* 显示移动菜单按钮 */
-    }
-
+    
     nav ul li {
-        margin: 0;
+        margin: 0.5rem 0.8rem;
     }
 }
 
@@ -924,15 +915,18 @@ footer p {
     }
 
     nav ul {
-        display: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     nav ul li {
-        margin: 0;
+        margin: 0.5rem;
     }
 
     nav ul li a {
         padding: 0.5rem;
+        font-size: 0.9rem;
     }
 
     main {
@@ -1609,81 +1603,14 @@ body:has(.hero) nav ul li a[href^="https://"] {
 }
 
 /* 移动菜单按钮样式 */
-.mobile-menu-toggle {
-    display: none; /* 默认隐藏 */
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    cursor: pointer;
-    z-index: 1001; /* 确保在最上层 */
-    margin-left: auto;
-}
-
-.mobile-menu-toggle span {
-    display: block;
-    height: 3px;
-    width: 100%;
-    background-color: var(--primary-color);
-    border-radius: 3px;
-    transition: all 0.3s ease;
-}
-
-/* 移动菜单打开状态 */
-.mobile-menu-toggle.active span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-}
-
-.mobile-menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.mobile-menu-toggle.active span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-}
-
-/* 移动端菜单打开状态下的导航样式 */
-nav.mobile-open {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--mobile-menu-bg);
-    z-index: 999;
-    padding-top: 80px;
-    backdrop-filter: blur(10px);
-}
-
-nav.mobile-open ul {
-    display: flex !important;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    margin-top: 20px;
-}
-
-nav.mobile-open ul li {
-    margin: 1.5rem 0;
-}
-
+.mobile-menu-toggle,
+.mobile-menu-toggle span,
+.mobile-menu-toggle.active span:nth-child(1),
+.mobile-menu-toggle.active span:nth-child(2),
+.mobile-menu-toggle.active span:nth-child(3),
+nav.mobile-open,
+nav.mobile-open ul,
+nav.mobile-open ul li,
 nav.mobile-open ul li a {
-    font-size: 1.5rem;
-    padding: 1rem;
-    display: inline-block;
-    width: 80%;
-}
-
-/* 强制在移动设备上显示菜单按钮 */
-@media screen and (max-width: 940px) {
-    .mobile-menu-toggle {
-        display: flex;
-    }
-    
-    nav ul {
-        display: none;
-    }
+    /* 清空所有相关样式 */
 }

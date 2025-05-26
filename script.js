@@ -1,35 +1,6 @@
 // 在页面加载完成后执行
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 移动端菜单切换
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const nav = document.querySelector('nav');
-    
-    console.log('移动菜单按钮元素:', mobileMenuToggle); // 调试信息
-    
-    if (mobileMenuToggle) {
-        console.log('屏幕宽度:', window.innerWidth); // 输出当前屏幕宽度
-        console.log('移动菜单按钮样式:', window.getComputedStyle(mobileMenuToggle).display); // 检查按钮是否显示
-        
-        mobileMenuToggle.addEventListener('click', () => {
-            console.log('移动菜单按钮被点击');
-            mobileMenuToggle.classList.toggle('active');
-            nav.classList.toggle('mobile-open');
-            // 禁止/允许背景滚动
-            document.body.style.overflow = nav.classList.contains('mobile-open') ? 'hidden' : '';
-        });
-        
-        // 点击导航链接后关闭菜单
-        const navLinks = document.querySelectorAll('nav a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuToggle.classList.remove('active');
-                nav.classList.remove('mobile-open');
-                document.body.style.overflow = '';
-            });
-        });
-    }
-    
     // 根据时间段检查是否应该使用夜间模式
     const shouldUseDarkMode = () => {
         const currentHour = new Date().getHours();
