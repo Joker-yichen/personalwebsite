@@ -1,6 +1,29 @@
 // 在页面加载完成后执行
 document.addEventListener('DOMContentLoaded', () => {
     
+    // 移动端菜单切换
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('nav');
+    
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('active');
+            nav.classList.toggle('mobile-open');
+            // 禁止/允许背景滚动
+            document.body.style.overflow = nav.classList.contains('mobile-open') ? 'hidden' : '';
+        });
+        
+        // 点击导航链接后关闭菜单
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                nav.classList.remove('mobile-open');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+    
     // 根据时间段检查是否应该使用夜间模式
     const shouldUseDarkMode = () => {
         const currentHour = new Date().getHours();
